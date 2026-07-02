@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result | AI Credit Bank</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+            PREMIUM BACKGROUND
+========================================== -->
+
+<div class="background">
+
+    <span class="circle circle1"></span>
+
+    <span class="circle circle2"></span>
+
+    <span class="circle circle3"></span>
+
+    <div class="particles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                NAVBAR
+========================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+        </div>
+
+        <div class="logo-text">
+
+            <h2>AI Credit Bank</h2>
+
+            <span>Machine Learning Prediction</span>
+
+        </div>
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+
+            <a href="{{ url_for('home') }}">
+
+                Home
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="active">
+
+                Result
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ==========================================
+            RESULT SECTION
+            PART 2
+========================================== -->
+
+
+
+
+
+<!-- ==========================================
+          APPLICANT SUMMARY
+            PART 3
+========================================== -->
+
+
+
+
+
+<!-- ==========================================
+              FOOTER
+            PART 4
+========================================== -->
+
+
+
+
+
+<!-- JavaScript -->
+
+
+
+
+
+
+<!-- ==========================================
+            RESULT SECTION
+========================================== -->
+
+<section class="result-section">
+
+    <div class="result-card">
+
+        <!-- Badge -->
+
+        <span class="section-badge">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            AI Prediction Completed
+
+        </span>
+
+
+        <!-- Result Icon -->
+
+        <div class="result-icon">
+
+            {% if prediction == 1 %}
+
+                <i class="fa-solid fa-circle-check approved"></i>
+
+            {% elif prediction == 0 %}
+
+                <i class="fa-solid fa-circle-xmark rejected"></i>
+
+            {% else %}
+
+                <i class="fa-solid fa-circle-exclamation warning"></i>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Result Heading -->
+
+        {% if prediction == 1 %}
+
+            <h1 class="approved-text">
+
+                Credit Card Approved
+
+            </h1>
+
+        {% elif prediction == 0 %}
+
+            <h1 class="rejected-text">
+
+                Credit Card Rejected
+
+            </h1>
+
+        {% else %}
+
+            <h1 class="warning-text">
+
+                Prediction Error
+
+            </h1>
+
+        {% endif %}
+
+
+        <!-- Description -->
+
+        <p class="result-description">
+
+            Our Machine Learning model has analyzed the submitted
+            financial information and generated the following prediction.
+
+        </p>
+
+
+        <!-- Confidence -->
+
+        <div class="confidence-box">
+
+            <div class="confidence-header">
+
+                <span>
+
+                    Prediction Confidence
+
+                </span>
+
+                <span>
+
+                    {{ confidence }}%
+
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+
+                     style="width:{{ confidence }}%;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recommendation -->
+
+        <!-- ==========================================
+            AI ANALYSIS
+========================================== -->
+
+<div class="analysis-panel">
+
+    <h3>
+
+        <i class="fa-solid fa-brain"></i>
+
+        AI Risk Analysis
+
+    </h3>
+
+    <div class="analysis-grid">
+
+        <div class="analysis-item">
+            <div class="result-animation">
+
+{% if prediction == 1 %}
+
+<lottie-player
+src="https://assets10.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+background="transparent"
+speed="1"
+style="width:180px;height:180px;"
+loop
+autoplay>
+</lottie-player>
+
+{% else %}
+
+<lottie-player
+src="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"
+background="transparent"
+speed="1"
+style="width:180px;height:180px;"
+loop
+autoplay>
+</lottie-player>
+
+{% endif %}
+
+</div>
+
+            <span>Financial Stability</span>
+
+            <strong>High</strong>
+
+        </div>
+
+        <div class="analysis-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>Credit Risk</span>
+
+            <strong>Low</strong>
+
+        </div>
+
+        <div class="analysis-item">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Confidence</span>
+
+            <strong>{{ confidence }}%</strong>
+
+        </div>
+
+        <div class="analysis-item">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>Recommendation</span>
+
+            <strong>
+
+                {% if prediction == 1 %}
+
+                    Approved
+
+                {% else %}
+
+                    Review Required
+
+                {% endif %}
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==========================================
+            MODEL INFORMATION
+========================================== -->
+
+<section class="model-section">
+
+    <div class="model-card">
+
+        <h3>
+
+            <i class="fa-solid fa-microchip"></i>
+
+            Model Information
+
+        </h3>
+
+        <div class="model-grid">
+
+            <div class="model-item">
+
+                <span>Model Used</span>
+
+                <strong>Random Forest</strong>
+
+            </div>
+
+            <div class="model-item">
+
+                <span>Training Accuracy</span>
+
+                <strong>89.2%</strong>
+
+            </div>
+
+            <div class="model-item">
+
+                <span>Prediction Confidence</span>
+
+                <strong>{{ confidence }}%</strong>
+
+            </div>
+
+            <div class="model-item">
+
+                <span>Prediction Status</span>
+
+                <strong>
+
+                    {% if prediction == 1 %}
+                        Approved
+                    {% else %}
+                        Rejected
+                    {% endif %}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            AI DECISION METER
+========================================== -->
+
+<section class="decision-section">
+
+    <div class="decision-card">
+
+        <h3>
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            AI Decision Meter
+
+        </h3>
+
+        <div class="meter">
+
+            <div class="meter-fill"
+                 style="width:{{ confidence }}%;">
+
+            </div>
+
+        </div>
+
+        <div class="meter-footer">
+
+            <span>Low Risk</span>
+
+            <strong>{{ confidence }}%</strong>
+
+            <span>High Confidence</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            PREDICTION TIMELINE
+========================================== -->
+
+<section class="timeline-section">
+
+    <h3>
+
+        <i class="fa-solid fa-timeline"></i>
+
+        Prediction Workflow
+
+    </h3>
+
+    <div class="timeline">
+
+        <div class="timeline-item active">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>Application Received</span>
+
+        </div>
+
+        <div class="timeline-item active">
+
+            <i class="fa-solid fa-database"></i>
+
+            <span>Data Validated</span>
+
+        </div>
+
+        <div class="timeline-item active">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <span>AI Model Processed</span>
+
+        </div>
+
+        <div class="timeline-item active">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>Decision Generated</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- ==========================================
+            ACTION BUTTONS
+========================================== -->
+
+<section class="action-section">
+
+    <div class="action-buttons">
+
+        <a href="{{ url_for('home') }}" class="primary-btn">
+
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+
+            New Prediction
+
+        </a>
+
+        <a
+    href="/download-report"
+    class="secondary-btn">
+
+    <i class="fa-solid fa-file-pdf"></i>
+
+    Download Report
+
+</a>
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer class="footer" id="contact">
+
+    <div class="footer-container">
+
+        <!-- About -->
+
+        <div class="footer-about">
+
+            <div class="footer-logo">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <h2>AI Credit Bank</h2>
+
+            </div>
+
+            <p>
+
+                AI-powered Credit Card Approval Prediction
+                System built using Machine Learning,
+                Flask and Random Forest.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Quick Links -->
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('home') }}#predict">Prediction</a>
+
+            <a href="{{ url_for('home') }}#technology">Technology</a>
+
+        </div>
+
+
+
+        <!-- Social -->
+
+        <div class="footer-contact">
+
+            <h3>Connect With Me</h3>
+
+            <div class="social-links">
+
+                <a href="https://github.com/swamysamineedi"
+                   target="_blank">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/swamy-samineedi-7a846b382/"
+                   target="_blank">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                </a>
+
+                <a href="mailto:yourmail@example.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 AI Credit Bank |
+            Developed by <strong>Swamy</strong>
+
+        </p>
+
+        <a href="#" class="back-to-top">
+
+            <i class="fa-solid fa-arrow-up"></i>
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+
+
+
