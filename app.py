@@ -95,7 +95,7 @@ def predict():
     # BUSINESS RULE
     # ======================================================
 
-    if prediction == 1 and confidence >= 70:
+    if prediction == 1 and confidence >= 63:
 
         prediction = 1
         status = "success"
