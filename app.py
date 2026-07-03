@@ -73,7 +73,7 @@ def predict():
             except:
                 data[feature] = 0
 
-    # ======================================================
+        # ======================================================
     # CREATE DATAFRAME
     # ======================================================
 
@@ -81,18 +81,33 @@ def predict():
 
     input_df = input_df[features]
 
+    # ======================================================
+    # PREDICT
+    # ======================================================
+
     prediction = model.predict(input_df)[0]
 
     probability = model.predict_proba(input_df)[0]
 
     confidence = round(max(probability) * 100, 2)
 
-    
     # ======================================================
-    # PREDICTION RESULT
+    # BUSINESS RULE
     # ======================================================
 
-    status = "success" if prediction == 1 else "danger"
+    if prediction == 1 and confidence >= 70:
+
+        prediction = 1
+        status = "success"
+
+    else:
+
+        prediction = 0
+        status = "danger"
+
+    # ======================================================
+    # RESULT
+    # ======================================================
 
     return render_template(
         "result.html",

@@ -2798,3 +2798,34 @@ grid-template-columns:1fr;
 
 }
 
+/* ==========================================
+        RESULT HEADING COLORS
+========================================== */
+
+.approved-text{
+
+    color:#22C55E;
+
+    text-shadow:
+        0 0 20px rgba(34,197,94,.35);
+
+}
+
+.rejected-text{
+
+    color:#EF4444;
+
+    text-shadow:
+        0 0 20px rgba(239,68,68,.35);
+
+}
+
+.warning-text{
+
+    color:#F59E0B;
+
+    text-shadow:
+        0 0 20px rgba(245,158,11,.35);
+
+}
+
