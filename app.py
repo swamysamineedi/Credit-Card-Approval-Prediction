@@ -103,7 +103,7 @@ def predict():
     else:
 
         prediction = 0
-        status = "danger"--
+        status = "danger"
 
     # ======================================================
     # RESULT
